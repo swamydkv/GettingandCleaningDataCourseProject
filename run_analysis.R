@@ -1,24 +1,24 @@
 #Step 1: "Merges the training and the test sets to create one data set."
 #
 # read subject training data
-subject_train = read.table("./GettingandCleaningDataCourseProject/UCI HAR Dataset/train/subject_train.txt", col.names=c("subject_id"))
+subject_training = read.table("./GettingandCleaningDataCourseProject/UCI HAR Dataset/train/subject_train.txt", col.names=c("subject_id"))
 # assign row number as the values of ID column
-subject_train$ID <- as.numeric(rownames(subject_train))
+subject_training$ID <- as.numeric(rownames(subject_training))
 
 # read training data
-X_train =X_train = read.table("./GettingandCleaningDataCourseProject/UCI HAR Dataset/train/X_train.txt") read.table("./GettingandCleaningDataCourseProject/UCI HAR Dataset/train/X_train.txt")
+X_training = read.table("./GettingandCleaningDataCourseProject/UCI HAR Dataset/train/X_train.txt")
 # assign row number as the values of ID column
-X_train$ID <- as.numeric(rownames(X_train))
+X_training$ID <- as.numeric(rownames(X_training))
 
 # read activity training data
-y_train = read.table("./GettingandCleaningDataCourseProject/UCI HAR Dataset/train/y_train.txt", col.names=c("activity_id"))
+Y_training = read.table("./GettingandCleaningDataCourseProject/UCI HAR Dataset/train/y_train.txt", col.names=c("activity_id"))
 # assign row number as the values of ID column
-y_train$ID <- as.numeric(rownames(y_train))
+Y_training$ID <- as.numeric(rownames(Y_training))
 
-# merge subject_train and y_train to train
-train <- merge(subject_train, y_train, all=TRUE)
-# merge train and X_train
-train <- merge(train, X_train, all=TRUE)
+# merge subject_training and Y_training to training
+training <- merge(subject_training, Y_training, all=TRUE)
+# merge training and X_training
+training <- merge(training, X_training, all=TRUE)
 
 
 # read subject training data
@@ -32,18 +32,18 @@ X_test = read.table("./GettingandCleaningDataCourseProject/UCI HAR Dataset/test/
 X_test$ID <- as.numeric(rownames(X_test))
 
 # read activity testing data
-y_test = read.table("./GettingandCleaningDataCourseProject/UCI HAR Dataset/test/y_test.txt", col.names=c("activity_id"))
+Y_test = read.table("./GettingandCleaningDataCourseProject/UCI HAR Dataset/test/Y_test.txt", col.names=c("activity_id"))
 # assign row number as the values of ID column
-y_test$ID <- as.numeric(rownames(y_test))
+Y_test$ID <- as.numeric(rownames(Y_test))
 
-# merge subject_test and y_test to train
-test <- merge(subject_test, y_test, all=TRUE)
+# merge subject_test and Y_test to training
+test <- merge(subject_test, Y_test, all=TRUE)
 # merge test and X_test
 test <- merge(test, X_test, all=TRUE) 
 
 
-#combine train and test
-data1 <- rbind(train, test)
+#combine training and test
+data1 <- rbind(training, test)
 
 
 #Step 2: "Extracts only the measurements on the mean and standard deviation for each measurement."
