@@ -83,3 +83,4 @@ aggdata = merge(aggdata, activity_labels)
 write.table(aggdata, "./submit.txt", row.name=FALSE)
 #write.csv(file=".//submit.csv", x=aggdata)
 data4 = data3
+
