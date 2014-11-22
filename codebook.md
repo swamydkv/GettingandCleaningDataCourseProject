@@ -10,6 +10,6 @@ This code book describes the variables, the data, and any transformations or wor
 # Variables
 
 * `X_training`, `Y_training`, `X_test`, `Y_test`, `subject_training` and `subject_test` contain the data from the downloaded files.
-* `training`, `test`, `data1`, `data2`, `data3` and `data4` merge the previous datasets to further analysis.
 * `features` and `activity_labels` contain data from `features.txt` and `activity_labels.txt`
-* Finally, `submit.txt` contains the relevant averages which will be later stored in a `.txt` file.
+* `training`, `test`, `data1`, `data2`, `data3` and `data4` merge the previous datasets to further analysis.
+* Finally, `submit.txt` contains the relevant averages.
